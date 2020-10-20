@@ -22,6 +22,7 @@ import androidx.annotation.DrawableRes;
 
 import com.crazecoder.flutter.adview.FlutterAdviewPlugin;
 import com.crazecoder.flutter.adview.R;
+import com.crazecoder.flutter.adview.utils.LogUtil;
 import com.kuaiyou.open.AdManager;
 import com.kuaiyou.open.InitSDKManager;
 import com.kuaiyou.open.SpreadManager;
@@ -152,18 +153,18 @@ public abstract class SplashAdAbstractActivity extends Activity {
     private AdViewSpreadListener splashADListener = new AdViewSpreadListener() {
         @Override
         public void onAdClicked() {
-            Log.i("AdViewDemo", "onAdClicked");
+            LogUtil.i("AdViewDemo", "onAdClicked");
         }
 
         @Override
         public void onAdClosed() {
-            Log.i("AdViewDemo", "onAdClosedAd");
+            LogUtil.i("AdViewDemo", "onAdClosedAd");
             next();
         }
 
         @Override
         public void onAdClosedByUser() {
-            Log.i("AdViewDemo", "onAdClosedByUser");
+            LogUtil.i("AdViewDemo", "onAdClosedByUser");
             next();
         }
 
@@ -174,23 +175,23 @@ public abstract class SplashAdAbstractActivity extends Activity {
 
         @Override
         public void onAdDisplayed() {
-            Log.i("AdViewDemo", "onAdDisplayed");
+            LogUtil.i("AdViewDemo", "onAdDisplayed");
         }
 
         @Override
         public void onAdFailedReceived(String arg1) {
-            Log.i("AdViewDemo", "onAdRecieveFailed");
+            LogUtil.i("AdViewDemo", "onAdRecieveFailed");
             next();
         }
 
         @Override
         public void onAdReceived() {
-            Log.i("AdViewDemo", "onAdRecieved");
+            LogUtil.i("AdViewDemo", "onAdRecieved");
         }
 
         @Override
         public void onAdSpreadPrepareClosed() {
-            Log.i("AdViewDemo", "onAdSpreadPrepareClosed");
+            LogUtil.i("AdViewDemo", "onAdSpreadPrepareClosed");
             next();
         }
 

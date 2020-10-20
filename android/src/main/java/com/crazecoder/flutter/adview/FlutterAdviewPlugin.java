@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat;
 import com.crazecoder.flutter.adview.utils.AdInstlUtil;
 import com.crazecoder.flutter.adview.utils.AdVideoUtil;
 import com.crazecoder.flutter.adview.utils.BannerUtil;
+import com.crazecoder.flutter.adview.utils.LogUtil;
 import com.kuaiyou.open.InitSDKManager;
 
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class FlutterAdviewPlugin implements FlutterPlugin, MethodCallHandler, Ac
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-        Log.i("AdViewDemo", "onAttachedToEngine");
+        LogUtil.i("AdViewDemo", "onAttachedToEngine");
         this.flutterPluginBinding = flutterPluginBinding;
     }
 
@@ -99,7 +100,7 @@ public class FlutterAdviewPlugin implements FlutterPlugin, MethodCallHandler, Ac
 
     @Override
     public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
-        Log.i("AdViewDemo", "onAttachedToActivity");
+        LogUtil.i("AdViewDemo", "onAttachedToActivity");
         activity = binding.getActivity();
         channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "flutter_adview");
         channel.setMethodCallHandler(this);
@@ -109,20 +110,20 @@ public class FlutterAdviewPlugin implements FlutterPlugin, MethodCallHandler, Ac
 
     @Override
     public void onDetachedFromActivityForConfigChanges() {
-        Log.i("AdViewDemo", "onDetachedFromActivityForConfigChanges");
+        LogUtil.i("AdViewDemo", "onDetachedFromActivityForConfigChanges");
 
     }
 
     @Override
     public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
-        Log.i("AdViewDemo", "onReattachedToActivityForConfigChanges");
+        LogUtil.i("AdViewDemo", "onReattachedToActivityForConfigChanges");
         activity = binding.getActivity();
         context = flutterPluginBinding.getApplicationContext();
     }
 
     @Override
     public void onDetachedFromActivity() {
-        Log.i("AdViewDemo", "onDetachedFromActivity");
+        LogUtil.i("AdViewDemo", "onDetachedFromActivity");
         flutterPluginBinding = null;
     }
     @TargetApi(Build.VERSION_CODES.M)

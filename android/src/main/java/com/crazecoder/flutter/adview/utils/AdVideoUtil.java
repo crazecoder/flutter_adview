@@ -42,42 +42,42 @@ public class AdVideoUtil implements AdViewVideoListener {
 
     @Override
     public void onReceivedVideo() {
-        Log.i(TAG, "onReceivedVideo");
+        LogUtil.i(TAG, "onReceivedVideo");
     }
 
     @Override
     public void onFailedReceivedVideo(String error) {
-        Log.i(TAG, "onFailedRecievedVideo:" + error);
+        LogUtil.i(TAG, "onFailedRecievedVideo:" + error);
     }
 
     @Override
     public void onVideoStartPlayed() {
-        Log.i(TAG, "onVideoStartPlayed");
+        LogUtil.i(TAG, "onVideoStartPlayed");
     }
 
     @Override
     public void onVideoFinished() {
-        Log.i(TAG, "onVideoFinished");
+        LogUtil.i(TAG, "onVideoFinished");
     }
 
     @Override
     public void onVideoClicked() {
-        Log.i(TAG, "onVideoClicked");
+        LogUtil.i(TAG, "onVideoClicked");
     }
 
     @Override
     public void onVideoClosed() {
-        Log.i(TAG, "onVideoClosed");
+        LogUtil.i(TAG, "onVideoClosed");
     }
 
     @Override
     public void onPlayedError(String arg0) {
-        Log.i(TAG, "onPlayedError:" + arg0);
+        LogUtil.i(TAG, "onPlayedError:" + arg0);
     }
 
     @Override
     public void onVideoReady() {
-        Log.i(TAG, "onVideoReady");
+        LogUtil.i(TAG, "onVideoReady");
         videoManager.playVideo(activity.getApplicationContext());
     }
 }

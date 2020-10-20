@@ -88,12 +88,12 @@ public class BannerUtil implements AdViewBannerListener {
 
     @Override
     public void onAdClicked() {
-        Log.i("AdViewDemo", "onAdClicked");
+        LogUtil.i("AdViewDemo", "onAdClicked");
     }
 
     @Override
     public void onAdClosed() {
-        Log.i("AdViewDemo", "onAdClosedAd");
+        LogUtil.i("AdViewDemo", "onAdClosedAd");
         if (null != posId) {
             dispose(posId);
         }
@@ -101,17 +101,17 @@ public class BannerUtil implements AdViewBannerListener {
 
     @Override
     public void onAdDisplayed() {
-        Log.i("AdViewDemo", "onAdDisplayed");
+        LogUtil.i("AdViewDemo", "onAdDisplayed");
     }
 
     @Override
     public void onAdFailedReceived(String arg1) {
-        Log.i("AdViewDemo", "onAdRecieveFailed");
+        LogUtil.i("AdViewDemo", "onAdRecieveFailed");
     }
 
     @Override
     public void onAdReceived() {
-        Log.i("AdViewDemo", "onAdRecieved");
+        LogUtil.i("AdViewDemo", "onAdRecieved");
     }
 
 }

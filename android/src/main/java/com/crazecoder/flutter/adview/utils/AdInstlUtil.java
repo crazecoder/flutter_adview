@@ -37,32 +37,32 @@ public class AdInstlUtil implements AdViewInstlListener {
 
     @Override
     public void onAdClicked() {
-        Log.i("AdViewDemo", "onAdClicked");
+        LogUtil.i("AdViewDemo", "onAdClicked");
     }
 
     @Override
     public void onAdClosed() {
-        Log.i("AdViewDemo", "onAdClosedAd");
+        LogUtil.i("AdViewDemo", "onAdClosedAd");
     }
 
     @Override
     public void onAdReady() {
-        Log.i("AdViewDemo", "onAdReady");
+        LogUtil.i("AdViewDemo", "onAdReady");
         instlManager.showInstl(activity);
     }
 
     @Override
     public void onAdDisplayed() {
-        Log.i("AdViewDemo", "onDisplayed");
+        LogUtil.i("AdViewDemo", "onDisplayed");
     }
 
     @Override
     public void onAdFailedReceived(String arg1) {
-        Log.i("AdViewDemo", "onAdRecieveFailed：" + arg1);
+        LogUtil.i("AdViewDemo", "onAdRecieveFailed：" + arg1);
     }
 
     @Override
     public void onAdReceived() {
-        Log.i("AdViewDemo", "onAdRecieved");
+        LogUtil.i("AdViewDemo", "onAdRecieved");
     }
 }
