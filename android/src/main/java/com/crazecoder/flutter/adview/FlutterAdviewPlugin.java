@@ -40,7 +40,7 @@ public class FlutterAdviewPlugin implements FlutterPlugin, MethodCallHandler, Ac
     private static Context context;
     private static Activity activity;
     private FlutterPluginBinding flutterPluginBinding;
-    private static String appId;
+    public static String appId;
 
 
     @Override

@@ -20,6 +20,7 @@ import android.widget.Toast;
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 
+import com.crazecoder.flutter.adview.FlutterAdviewPlugin;
 import com.crazecoder.flutter.adview.R;
 import com.kuaiyou.open.AdManager;
 import com.kuaiyou.open.InitSDKManager;
@@ -54,6 +55,7 @@ public abstract class SplashAdAbstractActivity extends Activity {
         adId = getIntent().getStringExtra("posId");
         if (TextUtils.isEmpty(appId)) {
             appId = getAppId();
+            FlutterAdviewPlugin.appId = appId;
         }
         if (TextUtils.isEmpty(adId)) {
             adId = getPosId();
