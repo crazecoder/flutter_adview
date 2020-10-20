@@ -6,7 +6,7 @@ class FlutterAdview {
   static const MethodChannel _channel = const MethodChannel('flutter_adview');
 
   static Future<Null> initSdk(String appId,
-      {bool downloadNotificationEnable = false}) async {
+      {bool downloadNotificationEnable = true}) async {
     assert(appId != null && appId.isNotEmpty);
     Map map = {
       "appId": appId,
