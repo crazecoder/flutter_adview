@@ -5,7 +5,7 @@ addview广告联盟flutter插件，目前仅支持android，欢迎fork开发ios�
 ## Getting Started
 ```yaml
 dependencies:
-  signature_checker_android:
+  flutter_adview:
     git:
       url: git://github.com/crazecoder/flutter_adview.git
 ```
