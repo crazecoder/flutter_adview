@@ -25,16 +25,20 @@ public class BannerUtil implements AdViewBannerListener {
     private static BannerManager bannerManager = null;
 
 
-    private BannerUtil(Activity activity) {
-        this.activity = activity;
+    private BannerUtil() {
         cache = new HashMap<>();
         bannerManager = AdManager.createBannerAd();
     }
 
-    public static BannerUtil getInstance(Activity activity) {
+    public static BannerUtil getInstance() {
         if (instance == null) {
-            instance = new BannerUtil(activity);
+            instance = new BannerUtil();
         }
+        return instance;
+    }
+
+    public BannerUtil setActivity(Activity activity) {
+        this.activity = activity;
         return instance;
     }
 

@@ -15,21 +15,25 @@ public class AdVideoUtil implements AdViewVideoListener {
     private Activity activity;
 
 
-    private AdVideoUtil(Activity activity) {
-        this.activity = activity;
+    private AdVideoUtil() {
         videoManager = AdManager.createVideoAd();
     }
 
-    public static AdVideoUtil getInstance(Activity activity) {
+    public static AdVideoUtil getInstance() {
         if (instance == null) {
-            instance = new AdVideoUtil(activity);
+            instance = new AdVideoUtil();
         }
+        return instance;
+    }
+
+    public AdVideoUtil setActivity(Activity activity) {
+        this.activity = activity;
         return instance;
     }
 
     public void loadAd(String appId, String posId) {
         videoManager = AdManager.createVideoAd();
-        videoManager.loadVideoAd(activity, appId, posId);
+        videoManager.loadVideoAd(activity.getApplicationContext(), appId, posId);
         videoManager.setVideoListener(this);
 //        videoManager.autoCloseEnable(true);
         // 设置屏幕方向，取值可参照ActivityInfo.SCREEN_XXXXXX 定义的常量
@@ -74,6 +78,6 @@ public class AdVideoUtil implements AdViewVideoListener {
     @Override
     public void onVideoReady() {
         Log.i(TAG, "onVideoReady");
-        videoManager.playVideo(activity);
+        videoManager.playVideo(activity.getApplicationContext());
     }
 }

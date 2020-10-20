@@ -14,15 +14,19 @@ public class AdInstlUtil implements AdViewInstlListener {
     private Activity activity;
 
 
-    private AdInstlUtil(Activity activity) {
-        this.activity = activity;
+    private AdInstlUtil() {
         instlManager = AdManager.createInstlAd();
     }
 
-    public static AdInstlUtil getInstance(Activity activity) {
+    public static AdInstlUtil getInstance() {
         if (instance == null) {
-            instance = new AdInstlUtil(activity);
+            instance = new AdInstlUtil();
         }
+        return instance;
+    }
+
+    public AdInstlUtil setActivity(Activity activity) {
+        this.activity = activity;
         return instance;
     }
 

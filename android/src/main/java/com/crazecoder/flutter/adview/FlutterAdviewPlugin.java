@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -45,6 +46,7 @@ public class FlutterAdviewPlugin implements FlutterPlugin, MethodCallHandler, Ac
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
+        Log.i("AdViewDemo", "onAttachedToEngine");
         this.flutterPluginBinding = flutterPluginBinding;
     }
 
@@ -69,21 +71,21 @@ public class FlutterAdviewPlugin implements FlutterPlugin, MethodCallHandler, Ac
             result.success(null);
         } else if (call.method.equals("showBannerAD")) {
             String posId = call.argument("posId").toString();
-            BannerUtil.getInstance(activity).getBanner(appId, posId);
-            BannerUtil.getInstance(activity).show(posId);
+            BannerUtil.getInstance().setActivity(activity).getBanner(appId, posId);
+            BannerUtil.getInstance().setActivity(activity).show(posId);
             result.success(null);
         } else if (call.method.equals("disposeBannerAD")) {
             String posId = call.argument("posId").toString();
-            BannerUtil.getInstance(activity).dispose(posId);
+            BannerUtil.getInstance().setActivity(activity).dispose(posId);
             result.success(null);
         }else if (call.method.equals("loadInstlAd")) {
             String posId = call.argument("posId").toString();
             boolean isCloseable = call.argument("isCloseable");
-            AdInstlUtil.getInstance(activity).loadAd(appId,posId,isCloseable);
+            AdInstlUtil.getInstance().setActivity(activity).loadAd(appId,posId,isCloseable);
             result.success(null);
         } else if (call.method.equals("loadVideoAd")) {
             String posId = call.argument("posId").toString();
-            AdVideoUtil.getInstance(activity).loadAd(appId,posId);
+            AdVideoUtil.getInstance().setActivity(activity).loadAd(appId,posId);
             result.success(null);
         }else {
             result.notImplemented();
@@ -97,6 +99,7 @@ public class FlutterAdviewPlugin implements FlutterPlugin, MethodCallHandler, Ac
 
     @Override
     public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
+        Log.i("AdViewDemo", "onAttachedToActivity");
         activity = binding.getActivity();
         channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "flutter_adview");
         channel.setMethodCallHandler(this);
@@ -106,16 +109,20 @@ public class FlutterAdviewPlugin implements FlutterPlugin, MethodCallHandler, Ac
 
     @Override
     public void onDetachedFromActivityForConfigChanges() {
+        Log.i("AdViewDemo", "onDetachedFromActivityForConfigChanges");
 
     }
 
     @Override
     public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
-
+        Log.i("AdViewDemo", "onReattachedToActivityForConfigChanges");
+        activity = binding.getActivity();
+        context = flutterPluginBinding.getApplicationContext();
     }
 
     @Override
     public void onDetachedFromActivity() {
+        Log.i("AdViewDemo", "onDetachedFromActivity");
         flutterPluginBinding = null;
     }
     @TargetApi(Build.VERSION_CODES.M)
