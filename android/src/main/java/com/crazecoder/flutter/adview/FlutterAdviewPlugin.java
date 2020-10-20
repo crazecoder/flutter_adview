@@ -37,8 +37,8 @@ public class FlutterAdviewPlugin implements FlutterPlugin, MethodCallHandler, Ac
     /// This local reference serves to register the plugin with the Flutter Engine and unregister it
     /// when the Flutter Engine is detached from the Activity
     private MethodChannel channel;
-    private Context context;
-    private Activity activity;
+    private static Context context;
+    private static Activity activity;
     private FlutterPluginBinding flutterPluginBinding;
     private static String appId;
 
@@ -47,6 +47,14 @@ public class FlutterAdviewPlugin implements FlutterPlugin, MethodCallHandler, Ac
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
         this.flutterPluginBinding = flutterPluginBinding;
     }
+
+    public static void registerWith(Registrar registrar) {
+        final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_adview");
+        channel.setMethodCallHandler(new FlutterAdviewPlugin());
+        activity = registrar.activity();
+        context = registrar.context();
+    }
+
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
