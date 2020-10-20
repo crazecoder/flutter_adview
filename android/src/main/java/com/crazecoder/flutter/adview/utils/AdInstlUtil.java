@@ -27,8 +27,6 @@ public class AdInstlUtil implements AdViewInstlListener {
     }
 
     public void loadAd(String appId, String posId, boolean isCloseable) {
-        Log.i("AdViewDemo", "appId:"+appId+"  posId:"+posId);
-
         instlManager.loadInstlAd(activity, appId, posId, isCloseable);//有关闭按钮：true，无关闭按钮：false
         instlManager.setInstlListener(this);
     }
