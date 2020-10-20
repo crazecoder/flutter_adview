@@ -20,9 +20,9 @@ android {
     }
 }
 ```
-###开屏
+### 开屏
 因考虑视觉效果，不用flutter代码调用，直接选用MainActivity里start
-####新建SplashActivity
+#### 新建SplashActivity
 ```java
 public class ADSplashActivity extends SplashAdAbstractActivity {
     @Override
@@ -46,7 +46,7 @@ public class ADSplashActivity extends SplashAdAbstractActivity {
     }
 }
 ```
-####MainActivity里startActivity
+#### MainActivity里startActivity
 ```java
 public class MainActivity extends FlutterActivity {
     @Override
@@ -57,7 +57,7 @@ public class MainActivity extends FlutterActivity {
     }
 }
 ```
-####banner、插屏、视频调用
+#### banner、插屏、视频调用
 ```dart
 //初始化，如果你已经接入了开屏广告，此方法可以略过
 FlutterAdview.initSdk("xxxxx");
