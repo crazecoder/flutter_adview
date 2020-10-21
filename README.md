@@ -17,6 +17,9 @@ android {
         checkReleaseBuilds false
     }
     defaultConfig {
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86', 'arm64-v8a', 'armeabi'
+        }
         repositories {
             flatDir {
                 dirs project(':flutter_adview').file('libs'), 'libs'
@@ -78,3 +81,13 @@ FlutterAdview.loadInstlAd(posId: "xxxxx", isCloseable: true);
 //视频广告
 FlutterAdview.loadVideoAd(posId: "xxxxx");
 ```
+#### release打包（Android）
+64-bit
+```
+flutter build apk --release --target-platform android-arm64
+```
+32-bit（目前配合armeabi-v7a可以打出32位64位通用包）
+```
+flutter build apk --release --target-platform android-arm
+```
+

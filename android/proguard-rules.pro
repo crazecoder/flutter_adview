@@ -1,12 +1,3 @@
--optimizationpasses 5
--dontskipnonpubliclibraryclassmembers
--printmapping proguardMapping.txt
--optimizations !code/simplification/cast,!field/*,!class/merging/*
--keepattributes *Annotation*,InnerClasses
--keepattributes Signature
--keepattributes SourceFile,LineNumberTable
-
-
 #-ignorewarnings
 -keep class com.kuaiyou.** {*;}
 -keep public class com.kyview.** {*;}
@@ -69,6 +60,14 @@
 -keep public class java.nio.* { *; }
 -dontwarn com.squareup.**
 -dontwarn okio.**
+
+##########flutter相关不混淆############
+-keep class io.flutter.app.** { *; }
+-keep class io.flutter.plugin.**  { *; }
+-keep class io.flutter.util.**  { *; }
+-keep class io.flutter.view.**  { *; }
+-keep class io.flutter.**  { *; }
+-keep class io.flutter.plugins.**  { *; }
 
 
 
