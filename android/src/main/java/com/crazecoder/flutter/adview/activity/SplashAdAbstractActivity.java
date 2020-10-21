@@ -48,7 +48,7 @@ public abstract class SplashAdAbstractActivity extends Activity {
         setContentView(R.layout.splash_layout);
         InitSDKManager.getInstance().init(getApplicationContext());
         //下载类广告默认弹出二次确认框，如需关闭提示请设置如下；设置后对全部广告生效
-        InitSDKManager.setDownloadNotificationEnable(true);
+        InitSDKManager.setDownloadNotificationEnable(false);
 
         appId = getIntent().getStringExtra("appId");
         adId = getIntent().getStringExtra("posId");
