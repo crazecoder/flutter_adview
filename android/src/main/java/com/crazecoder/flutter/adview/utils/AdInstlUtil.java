@@ -1,7 +1,6 @@
 package com.crazecoder.flutter.adview.utils;
 
 import android.app.Activity;
-import android.util.Log;
 
 import com.kuaiyou.open.AdManager;
 import com.kuaiyou.open.InstlManager;

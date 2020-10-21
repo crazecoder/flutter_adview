@@ -31,8 +31,6 @@ import com.kuaiyou.open.interfaces.AdViewSpreadListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.flutter.Log;
-
 public abstract class SplashAdAbstractActivity extends Activity {
     private SpreadManager spreadManager = null;
 

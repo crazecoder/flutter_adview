@@ -1,8 +1,9 @@
 package com.crazecoder.flutter.adview.utils;
 
-import android.util.Log;
 
 import com.crazecoder.flutter.adview.BuildConfig;
+
+import io.flutter.Log;
 
 
 /**

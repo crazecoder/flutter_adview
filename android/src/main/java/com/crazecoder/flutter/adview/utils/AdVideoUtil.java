@@ -2,7 +2,6 @@ package com.crazecoder.flutter.adview.utils;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
-import android.util.Log;
 
 import com.kuaiyou.open.AdManager;
 import com.kuaiyou.open.VideoManager;
@@ -78,6 +77,6 @@ public class AdVideoUtil implements AdViewVideoListener {
     @Override
     public void onVideoReady() {
         LogUtil.i(TAG, "onVideoReady");
-        videoManager.playVideo(activity.getApplicationContext());
+        videoManager.playVideo(activity);
     }
 }

@@ -14,8 +14,6 @@ import com.kuaiyou.open.interfaces.AdViewBannerListener;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.flutter.Log;
-
 public class BannerUtil implements AdViewBannerListener {
     private static final String TAG = "BannerUtil";
     private Activity activity;
