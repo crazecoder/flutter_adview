@@ -11,7 +11,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp() {
-    FlutterAdview.initSdk("SDK20202220101051w961v1jtnexaluz");
+    //初始化，如果你已经接入了开屏广告，此方法可以略过，否则可能会出现重复申请权限问题
+    // FlutterAdview.initSdk("SDK20202220101051w961v1jtnexaluz");
   }
 
   @override

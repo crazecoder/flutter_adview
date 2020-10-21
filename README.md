@@ -11,6 +11,11 @@ dependencies:
 ```
 ```gradle
 android {
+    lintOptions {
+        disable 'InvalidPackage'
+        //打包报Failed to transform libs.jar to match attributes时添加
+        checkReleaseBuilds false
+    }
     defaultConfig {
         repositories {
             flatDir {
@@ -59,7 +64,7 @@ public class MainActivity extends FlutterActivity {
 ```
 #### banner、插屏、视频调用
 ```dart
-//初始化，如果你已经接入了开屏广告，此方法可以略过
+//初始化，如果你已经接入了开屏广告，此方法可以略过，否则可能会出现重复申请权限问题
 FlutterAdview.initSdk("xxxxx");
 
 //展示banner
